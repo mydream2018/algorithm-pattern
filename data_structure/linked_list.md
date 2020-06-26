@@ -379,6 +379,7 @@ func hasCycle(head *ListNode) bool {
     fast := head.Next
     slow := head
     for fast != nil && fast.Next != nil {
+    	//这里不应该比较值，应该比较内存，假设链表是 1->1->1->1没有环，按照这种判断方式，会返回true
         if fast.Val == slow.Val {
             return true
         }
